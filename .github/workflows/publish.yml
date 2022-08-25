@@ -1,0 +1,15 @@
+name: publish
+on:
+  push:
+    branches: [main]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - name: Publish to lists.sh
+        uses: picosh/scp-publish-action@main
+        with:
+          user: guiosoft
+          key: ${{ secrets.PRIVATE_KEY }}
+          host: prose.sh
