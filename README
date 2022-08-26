@@ -1,7 +1,5 @@
-https://prose.sh/
+# Blog guiosoft.prose.sh
 
-scp *.md prose.sh:/
+[![publish](https://github.com/guionardo/guiosoft-prose-sh-blog/actions/workflows/publish.yml/badge.svg)](https://github.com/guionardo/guiosoft-prose-sh-blog/actions/workflows/publish.yml)
 
-Username: guiosoft
-  │ Blog URL: https://guiosoft.prose.sh
-  │ Joined: 25 Aug 2022
+Altere os arquivos .md e a publicação será automática
