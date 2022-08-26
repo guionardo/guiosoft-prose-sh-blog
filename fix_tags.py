@@ -1,6 +1,6 @@
-from datetime import datetime
-import os
 import glob
+import os
+from datetime import datetime
 
 
 def get_tags(file):
@@ -24,6 +24,7 @@ def get_tags(file):
 
 
 def update_index(index, tags, links):
+    print(f'Atualizando {index}...')
     links.sort(key=lambda x: x[1].upper())
     tags = sorted(list(set(tags)))
     tmp = index+'.tmp'
@@ -38,13 +39,17 @@ description: Material para o curso de python
         for filename, filedescription in links:
             mtime = datetime.fromtimestamp(
                 os.path.getmtime(filename)).strftime('%d/%m/%Y %H:%M')
+            print(f' + {filename}: {filedescription} @ {mtime}')
             filename = os.path.basename(filename).replace('.md', '')
             f.write(f'- [{filedescription}]({filename}) @ {mtime}\n')
 
         f.write('\n## Tags\n\n')
+        print(f'\n + Tags: {tags}')
         for tag in tags:
             f.write(f'[{tag}](/?tag={tag}) ')
         f.write('\n')
+        f.write(
+            f'\nPublicado em: {datetime.now().strftime("%d/%m/%Y %H:%M")}\n')
 
     if os.path.isfile(index):
         mtime = datetime.fromtimestamp(os.path.getmtime(index))
