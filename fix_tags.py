@@ -36,12 +36,10 @@ description: Material para o curso de python
 # Tópicos
 
 """)
-        for filename, filedescription in links:
-            mtime = datetime.fromtimestamp(
-                os.path.getmtime(filename)).strftime('%d/%m/%Y %H:%M')
-            print(f' + {filename}: {filedescription} @ {mtime}')
+        for filename, filedescription in links:            
+            print(f' + {filename}: {filedescription}')
             filename = os.path.basename(filename).replace('.md', '')
-            f.write(f'- [{filedescription}]({filename}) @ {mtime}\n')
+            f.write(f'- [{filedescription}]({filename})\n')
 
         f.write('\n## Tags\n\n')
         print(f'\n + Tags: {tags}')
@@ -58,11 +56,11 @@ description: Material para o curso de python
     os.rename(tmp, index)
 
 
-index = 'python-curso.md'
+index = 'blog/python-curso.md'
 tags = []
 links = []
 
-for file in glob.glob('python-*.md'):
+for file in glob.glob('blog/python-*.md'):
     if file == index:
         continue
     file_tags, file_description = get_tags(file)
