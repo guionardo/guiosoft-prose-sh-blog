@@ -17,4 +17,4 @@ jobs:
           user: guiosoft
           key: ${{ secrets.PRIVATE_KEY }}
           host: prose.sh
-          src: '*.md'
+          src: 'blog/*.md'
