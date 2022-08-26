@@ -47,7 +47,7 @@ description: Material para o curso de python
             f.write(f'[{tag}](/?tag={tag}) ')
         f.write('\n')
         f.write(
-            f'\nPublicado em: {datetime.now().strftime("%d/%m/%Y %H:%M")}\n')
+            f'\nPublicado em: {datetime.now()}\n')
 
     if os.path.isfile(index):
         mtime = datetime.fromtimestamp(os.path.getmtime(index))
