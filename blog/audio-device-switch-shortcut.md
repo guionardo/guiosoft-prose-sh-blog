@@ -1,4 +1,7 @@
-# Atalho para trocar dispositivo de áudio no Linux
+---
+title: Atalho para trocar dispositivo de áudio no Linux
+tags: [linux,audio,automation]
+---
 
 Entre reuniões virtuais usando headset, escutar música ou mesmo só assistir uma aula, eu prefiro que o headset seja usado só quando é necessário um isolamento.
 
